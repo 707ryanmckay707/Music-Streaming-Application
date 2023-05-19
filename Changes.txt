@@ -1,0 +1,4 @@
+Changed Default database data to my own music
+Removed background color behind tracks table in various views (may put this back)
+Removed paper from TracksTable which was causing weird lines on the edges
+Added styling for the last element in the TracksTable
