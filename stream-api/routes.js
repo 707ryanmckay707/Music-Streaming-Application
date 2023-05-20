@@ -57,7 +57,7 @@ module.exports = function (app, trackPathsPromise) {
 
             // 206 Partial Content success status
             res.status(206).header({
-                'Content-Type': 'audio/mp3',
+                'Content-Type': 'audio/flac',
                 'Content-Length': content_length,
                 'Content-Range': "bytes " + start + "-" + end + "/" + stat.size
             });
@@ -70,7 +70,7 @@ module.exports = function (app, trackPathsPromise) {
             console.log("This request IS undefined");
 
             res.header({
-                'Content-Type': 'audio/mp3',
+                'Content-Type': 'audio/flac',
                 'Content-Length': stat.size
             });
             readStream = fs.createReadStream(audioFile);

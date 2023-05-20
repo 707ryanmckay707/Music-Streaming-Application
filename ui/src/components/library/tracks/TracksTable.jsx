@@ -204,7 +204,7 @@ export default function TracksTable(props) {
 
 
     function setNewQueueAndPlayCallBack(track_idx) {
-        setNewQueueAndPlay(tracks.slice(track_idx), 0);
+        setNewQueueAndPlay(tracks, track_idx);
     }
 
 

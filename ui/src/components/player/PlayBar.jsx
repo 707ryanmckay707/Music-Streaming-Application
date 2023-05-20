@@ -71,7 +71,7 @@ function CurrentTrackInfo(props) {
         >
             <img
                 src={getAlbumArt(albumID)}
-                alt='Tycho'
+                alt='Cover Art'
                 loading='lazy'
                 width='15%'
             />
@@ -171,6 +171,7 @@ function PlayHead(props) {
     const { movePlayPosition, currentTime, duration } = props;
 
     const convertSecondsToTimeString = (timeInSeconds) => {
+        console.log(timeInSeconds);
         return `${Math.floor(timeInSeconds / 60)}:${(timeInSeconds % 60) < 10 ? "0" + (timeInSeconds % 60).toString() : (timeInSeconds % 60).toString()}`;
     }
 

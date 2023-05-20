@@ -57,12 +57,7 @@ function ArtistTile(props) {
                     boxShadow: 10,
                 }}
             >
-                {/* <img
-                    src='https://material-ui.com/static/images/cards/contemplative-reptile.jpg'
-                    alt='green iguana'
-                /> */}
                 <img
-                    // src={TychoImage}
                     src={getArtistArt(artistID)}
                     alt='artist'
                     width='120%'
@@ -94,9 +89,6 @@ function ArtistTile(props) {
  */
 export default function ArtistsGrid(props) {
     const { artists, dispatch } = props;
-
-    // console.log('artists: ', artists);
-    // artists?.forEach(artist => console.log(artist));
 
     return (
         <Box
