@@ -1,9 +1,0 @@
-In the Original work I specifically did in other sections:
-Conditional display of particular views on pages (Owen and I)
-Helped fix dispatch bugs for 
-
-Changed Default database data to my own music
-Removed background color behind tracks table in various views (may put this back)
-Removed paper from TracksTable which was causing weird lines on the edges
-Added styling for the last element in the TracksTable
-Fixed Owen's use of my setNewQueueAndPlay
