@@ -7,7 +7,7 @@
 <Creating and populating the database>
 (This assumes you already have a database server setup and running)
 
-2. Create the database
+2. Create the database:
 - CREATE DATABASE music-streaming-application;
 	
 3. (optional) If needed, create a new user
