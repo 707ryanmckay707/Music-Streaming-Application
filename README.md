@@ -1,4 +1,15 @@
-# Setting up and running the Music Streaming Application
+# Music Streaming Application
+
+Created by Ryan McKay, Owen Mastropietro and Soren Richenberg for our capstone project.
+The UI is made with Javascript, React and MUI components.
+The API is split into two parts, one part is made with KoaJS which handles sending over images and metadata, the other part, for audio streaming, is made with express, and was originally created by DingGGU https://gist.github.com/DingGGu/8144a2b96075deaf1bac, which we modified and added additional functionality to.
+The Database is made with MySQL.
+
+The repositories that we used midway through our project are currently still public and located here: https://github.com/Cosmic-Ripples
+
+Originally the project used a larger preselected library of music, that was not stored on Github for copyright reasons. In order to have a small library of music available to use with the application, I have replaced the original library with some of my own music (© all rights reserved). I have also fixed a few visual and functional bugs with the UI.
+
+## Setting up and running the Music Streaming Application
 ### Getting the files
 
 1. In Github click "Code" and "Download ZIP", unzip the files and go then go to the root directory for the project. This directory should contain directories such as api and db-setup. You may need to open up multiple terminals here to start the ui and the two api-s.
