@@ -4,7 +4,7 @@
 1. In Github click "Code" and "Download ZIP", unzip the files and go then go to the root directory for the project. This directory should contain directories such as api and db-setup. You may need to open up multiple terminals here to start the ui and the two api-s.
 
 
-<Creating and populating the database>
+### Creating and populating the database
 	(This assumes you already have a database server setup and running)
 
 2. Create the database:
@@ -23,7 +23,7 @@
 
 6. Use music-streaming-application\db-setup\MSDB_INSERT_DEV_DATA.sql to fill the tables with data
 
-<koa api>
+### Setting up the KoaJS API
 
 7. Navigate to `koa-api` and run `npm install` to install the dependencies.
 
@@ -39,7 +39,7 @@
 10. Run `node api.js` to start the Koa server.
 
 
-<stream api>
+### Setting up the audio streaming API
 
 
 11. Navigate to `stream-api` and run `npm install` to install the dependencies.
@@ -51,7 +51,7 @@
 (Important note: the stream api should be started after the koa API has already been started. If the order is reversed, the stream api may not start with the correct data it needs from koa. To fix this, stop both the koa api and the stream api, and then start the koa api first, then the stream api)
 
 
-<ui>
+### Setting up the UI
 
 
 13. Navigate to `ui` and run `npm install` to install the dependencies.
