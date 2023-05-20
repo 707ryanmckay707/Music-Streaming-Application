@@ -1,13 +1,13 @@
 # Setting up and running the Music Streaming Application
 <Getting the files>
 
-	1. In Github click "Code" and "Download ZIP", unzip the files and go then go to the root directory for the project. This directory should contain directories such as api and db-setup. You may need to open up multiple terminals here to start the ui and the two api-s.
+1. In Github click "Code" and "Download ZIP", unzip the files and go then go to the root directory for the project. This directory should contain directories such as api and db-setup. You may need to open up multiple terminals here to start the ui and the two api-s.
 
 
 <Creating and populating the database>
 (This assumes you already have a database server setup and running)
 
-2. Create the database: 
+2. Create the database
 - CREATE DATABASE music-streaming-application;
 	
 3. (optional) If needed, create a new user
