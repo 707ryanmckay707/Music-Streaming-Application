@@ -1,4 +1,6 @@
 **/node_modules
 **/.DS_Store
 
+koa-api/database/connection.js
+
 Changes.txt
