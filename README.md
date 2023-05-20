@@ -8,15 +8,15 @@
 
 
 2. Create the database: 
-	CREATE DATABASE music-streaming-application;
+- CREATE DATABASE music-streaming-application;
 	
 3. (optional) If needed, create a new user
-	CREATE USER 'userName'@'localhost' IDENTIFIED BY 'password here';
-	CREATE USER 'userName'@'%' IDENTIFIED BY 'same password here';
+- CREATE USER 'userName'@'localhost' IDENTIFIED BY 'password here';
+- CREATE USER 'userName'@'%' IDENTIFIED BY 'same password here';
 	
 4. If needed, set permissions for the user you are using
-	GRANT ALL PRIVILEGES ON music-streaming-application.* TO 'userName'@'localhost' WITH GRANT OPTION;
-	GRANT ALL PRIVILEGES ON music-streaming-application.* TO 'userName'@'%' WITH GRANT OPTION;
+- GRANT ALL PRIVILEGES ON music-streaming-application.* TO 'userName'@'localhost' WITH GRANT OPTION;
+- GRANT ALL PRIVILEGES ON music-streaming-application.* TO 'userName'@'%' WITH GRANT OPTION;
 
 
 5. Use music-streaming-application\db-setup\MSDB_DDL.sql to build out the tables
