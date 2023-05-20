@@ -49,6 +49,7 @@ const ArtistImage = styled(Box)(({ artistid, theme }) => ({
     backgroundImage: `url(${getArtistArt(artistid)})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    borderRadius: 10
 }));
 
 

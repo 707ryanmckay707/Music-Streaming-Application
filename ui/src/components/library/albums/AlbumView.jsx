@@ -35,6 +35,7 @@ const AlbumImage = styled(Box)(({ albumid, theme }) => ({
     backgroundImage: `url(${getAlbumArt(albumid)})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    borderRadius: 10
 }));
 
 
