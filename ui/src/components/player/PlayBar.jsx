@@ -69,11 +69,19 @@ function CurrentTrackInfo(props) {
                 borderColor: 'yellow',
             }}
         >
-            <img
-                src={getAlbumArt(albumID)}
-                alt='Cover Art'
-                loading='lazy'
-                width='15%'
+            <Box
+                sx={{
+                    width: '15%',
+                    height: '108%',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justifyContent: 'flex-start',
+                    backgroundImage: `url(${getAlbumArt(albumID)})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    overflow: 'hidden',
+                    borderRadius: 2
+                }}
             />
             <Stack sx={{ ml: 2 }} >
                 <Typography aria-label='track title'
