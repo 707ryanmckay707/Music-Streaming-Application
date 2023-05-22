@@ -2,7 +2,7 @@
 
 Created by Ryan McKay, Owen Mastropietro and Soren Richenberg for our capstone project.
 The UI is made with Javascript, React and MUI components.
-The API is split into two parts, one part is made with KoaJS which handles sending over images and metadata, the other part, for audio streaming, is made with express, and was originally created by DingGGU https://gist.github.com/DingGGu/8144a2b96075deaf1bac, which we modified and added additional functionality to.
+The API is split into two parts, one part is made with KoaJS which handles sending over images and metadata, the other part, for streaming audio in chunks, is made with express, and was originally created by DingGGU https://gist.github.com/DingGGu/8144a2b96075deaf1bac, which we modified and added additional functionality to.
 The Database is made with MySQL.
 
 The repositories that we used midway through our project are currently still public and located here: https://github.com/Cosmic-Ripples
