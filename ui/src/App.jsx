@@ -35,7 +35,6 @@ export default function App() {
     const [queue, setQueue] = useState([]);
     const [queueHeadIdx, setQueueHeadIdx] = useState(() => null);
     const [audioPlayer, setAudioPlayer] = useState(() => {
-        console.log('hey');
         let audioPlayer = new Audio();
 
         //https://stackoverflow.com/questions/64474338/audio-player-returns-uncaught-in-promise-domexception-the-element-has-no-su
@@ -55,19 +54,6 @@ export default function App() {
 
         audioPlayer.src = apiPlayCallString + '3201';
 
-        /*
-        audioPlayer.ontimeupdate = function () {
-            setCurrentTime(audioPlayer.currentTime);
-        };
-        */
-
-        /*
-        setInterval(() => {
-            setCurrentTime(audioPlayer.currentTime);
-            console.log("yo");
-        },20);
-        */
-
         const updatePlaybar = () => {
             setCurrentTime(audioPlayer.currentTime);
             
@@ -82,14 +68,6 @@ export default function App() {
             setDuration(audioPlayer.duration);
         }
 
-        audioPlayer.onpause = function () {
-            setPaused(true);
-        }
-
-        audioPlayer.onplay = function () {
-            setPaused(false);
-        }
-
         return audioPlayer;
     });
 
@@ -102,15 +80,20 @@ export default function App() {
             setCurrentTime(audioPlayer.currentTime);
             setQueueHeadIdx(currIdx => ++currIdx);
         }
+        else {
+            setPaused(true);
+        }
     }
 
 
     const playOrPauseAudio = () => {
         if (paused === false) {
             audioPlayer.pause();
+            setPaused(true);
         }
         else {
             audioPlayer.play();
+            setPaused(false);
         }
     }
 
@@ -122,7 +105,7 @@ export default function App() {
 
 
     const movePlayPosition = (newPlayPosition) => {
-        if (newPlayPosition === 100) {
+        if (newPlayPosition >= 99.7) {
             newPlayPosition = 99.7;
         }
         audioPlayer.currentTime = newPlayPosition / 100 * duration;
@@ -131,10 +114,8 @@ export default function App() {
 
 
     const skipPlayback = (skipAmount) => {
-        console.log(audioPlayer.currentTime);
         audioPlayer.currentTime = audioPlayer.currentTime + skipAmount;
         setCurrentTime(audioPlayer.currentTime);
-        console.log(audioPlayer.currentTime);
     }
 
 
@@ -143,6 +124,7 @@ export default function App() {
             audioPlayer.src = apiPlayCallString + queue[queueHeadIdx - 1].ID;
             if (!paused) {
                 audioPlayer.play();
+                setPaused(false);
             }
             setCurrentTime(audioPlayer.currentTime);
             setQueueHeadIdx(currIdx => --currIdx);
@@ -151,6 +133,7 @@ export default function App() {
             audioPlayer.currentTime = 0;
             setCurrentTime(audioPlayer.currentTime);
             audioPlayer.play();
+            setPaused(false);
         }
     }
 
@@ -164,6 +147,7 @@ export default function App() {
             audioPlayer.src = apiPlayCallString + queue[queueHeadIdx + 1].ID;
             if (!paused) {
                 audioPlayer.play();
+                setPaused(false);
             }
             setCurrentTime(audioPlayer.currentTime);
             setQueueHeadIdx(currIdx => ++currIdx);
@@ -178,16 +162,13 @@ export default function App() {
      * up the new queue.
      * @param {Number} newQueueHead The index of the track in the new queue
      * to play first.
-     * @todo Owen: I believe this function will only ever set the queue index
-     * to 0? If so, we can remove the newQueueHead parameter.
      */
     const setNewQueueAndPlay = (newQueueTracksInfo, newQueueHead) => {
-        console.assert(newQueueHead === 0, 'newQueueHead must be 0... I think');
-
         setQueue(newQueueTracksInfo);
         setQueueHeadIdx(newQueueHead);
         audioPlayer.src = apiPlayCallString + newQueueTracksInfo[newQueueHead].ID;
         audioPlayer.play();
+        setPaused(false);
         setCurrentTime(audioPlayer.currentTime);
     }
 
