@@ -105,7 +105,7 @@ export default function App() {
 
 
     const movePlayPosition = (newPlayPosition) => {
-        if (newPlayPosition >= 99.7) {
+        if (newPlayPosition === 100) {
             newPlayPosition = 99.7;
         }
         audioPlayer.currentTime = newPlayPosition / 100 * duration;
